@@ -4,7 +4,7 @@
 #
 Name     : R-pxweb
 Version  : 0.6.3
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/pxweb_0.6.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pxweb_0.6.3.tar.gz
 Summary  : R Interface to the PX-Web/PC-Axis API
