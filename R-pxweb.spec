@@ -4,17 +4,17 @@
 #
 Name     : R-pxweb
 Version  : 0.9.1
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/pxweb_0.9.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pxweb_0.9.1.tar.gz
 Summary  : R Interface to PXWEB APIs
 Group    : Development/Tools
 License  : BSD-2-Clause
-Requires: R-checkmate
-Requires: R-httr
-Requires: R-jsonlite
-Requires: R-rjstat
+Requires: R-backports
+Requires: R-cli
+BuildRequires : R-backports
 BuildRequires : R-checkmate
+BuildRequires : R-cli
 BuildRequires : R-data.table
 BuildRequires : R-httr
 BuildRequires : R-jsonlite
@@ -37,10 +37,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1548008037
+export SOURCE_DATE_EPOCH=1552872968
 
 %install
-export SOURCE_DATE_EPOCH=1548008037
+export SOURCE_DATE_EPOCH=1552872968
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -76,8 +76,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library pxweb|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  pxweb || :
 
 
 %files
@@ -128,3 +127,30 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/pxweb/help/pxweb.rdx
 /usr/lib64/R/library/pxweb/html/00Index.html
 /usr/lib64/R/library/pxweb/html/R.css
+/usr/lib64/R/library/pxweb/tests/testthat.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-PxWebApiData_ApiData.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-api_catalogue.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-api_parameters.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-apis_in_catalogue.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-base_url.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-big_query.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-clean_pxweb.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-get_pxweb_data.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-get_pxweb_dims.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-get_pxweb_levels.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-get_pxweb_metadata.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-interactive_pxweb.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-multiple_queries_data.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-pxweb_api_catalogue.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-pxweb_api_class.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-pxweb_as_dataframe.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-pxweb_constructor.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-pxweb_data_comments.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-pxweb_examples.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-pxweb_get.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-pxweb_interactive.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-pxweb_query.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-pxweb_test_api.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-test_pxweb_api.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-utils_internal.R
+/usr/lib64/R/library/pxweb/tests/testthat/test-x_deprecated_get_pxweb_data.R
