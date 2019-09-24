@@ -4,17 +4,17 @@
 #
 Name     : R-pxweb
 Version  : 0.9.1
-Release  : 21
+Release  : 22
 URL      : https://cran.r-project.org/src/contrib/pxweb_0.9.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pxweb_0.9.1.tar.gz
 Summary  : R Interface to PXWEB APIs
 Group    : Development/Tools
 License  : BSD-2-Clause
-Requires: R-backports
-Requires: R-cli
-BuildRequires : R-backports
+Requires: R-checkmate
+Requires: R-httr
+Requires: R-jsonlite
+Requires: R-rjstat
 BuildRequires : R-checkmate
-BuildRequires : R-cli
 BuildRequires : R-data.table
 BuildRequires : R-httr
 BuildRequires : R-jsonlite
@@ -36,13 +36,13 @@ API is used by organizations such as Statistics Sweden and Statistics
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552872968
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569367686
 
 %install
-export SOURCE_DATE_EPOCH=1552872968
+export SOURCE_DATE_EPOCH=1569367686
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -71,12 +71,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  pxweb || :
+R CMD check --no-manual --no-examples --no-codoc pxweb || :
 
 
 %files
