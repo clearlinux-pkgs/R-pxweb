@@ -4,7 +4,7 @@
 #
 Name     : R-pxweb
 Version  : 0.9.1
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/pxweb_0.9.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pxweb_0.9.1.tar.gz
 Summary  : R Interface to PXWEB APIs
@@ -13,13 +13,13 @@ License  : BSD-2-Clause
 Requires: R-checkmate
 Requires: R-httr
 Requires: R-jsonlite
-Requires: R-rjstat
 BuildRequires : R-checkmate
 BuildRequires : R-data.table
 BuildRequires : R-httr
 BuildRequires : R-jsonlite
 BuildRequires : R-rjstat
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 API is used by organizations such as Statistics Sweden and Statistics
@@ -37,10 +37,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569367686
+export SOURCE_DATE_EPOCH=1571881415
 
 %install
-export SOURCE_DATE_EPOCH=1569367686
+export SOURCE_DATE_EPOCH=1571881415
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
