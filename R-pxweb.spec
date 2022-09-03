@@ -4,7 +4,7 @@
 #
 Name     : R-pxweb
 Version  : 0.16.1
-Release  : 49
+Release  : 50
 URL      : https://cran.r-project.org/src/contrib/pxweb_0.16.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pxweb_0.16.1.tar.gz
 Summary  : R Interface to PXWEB APIs
